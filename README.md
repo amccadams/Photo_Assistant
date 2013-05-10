@@ -22,7 +22,7 @@
 <ul>
 <li>A way to give the shoot a name</li>
 <li>Sub categories of types of shoots i.e. portrait, product, location, studio, etc. </li>
-<li>A way to recall different tyes fo info i.e. just serial model and seriel numbers, etc.</li>
+<li>A way to recall different tyes of info i.e. just serial model and seriel numbers, etc.</li>
 </ul>
 </p>
 <h2>Usage Instructions</h2>
