@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(:version => 20130515112300) do
     t.integer "photo_shoot_id"
   end
 
+  create_table "equipment_types", :force => true do |t|
+    t.string "name"
+  end
+
   create_table "equipments", :force => true do |t|
     t.string  "name"
     t.string  "serial"
@@ -36,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20130515112300) do
     t.string "time"
   end
 
-  create_table "types", :force => true do |t|
+  create_table "projects", :force => true do |t|
     t.string "name"
   end
 
