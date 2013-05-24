@@ -11,12 +11,12 @@ equipment_name = ARGV[1]
 
 params = { command: command, equipment: { name: ARGV[1] } }
 controller =  PhotoAssistantController.new(params)
-# routes = { "add" => :create, "list" => :index, "remove" => :destroy }
+routes = { "add" => :create, "list" => :index, "remove" => :destroy }
 
-# # This is a router:
-# if route = routes[command]
-#   controller.send route
-#  end
+# This is a router:
+if route = routes[command]
+  controller.send route
+ end
 
 greeting = "Welcome to Photo Assistant \nWhat would you like to do today?\n\n"
 puts greeting
