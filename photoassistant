@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require_relative 'bootstrap_ar'
+database = ENV['PA_ENV'] || 'development'
+connect_to database
+
+# # ARGV = [add, equipment]
+command = ARGV[0]
+equipment_name = ARGV[1]
+
+
+params = { command: command, equipment: { name: ARGV[1] } }
+controller =  PhotoAssistantController.new(params)
+# routes = { "add" => :create, "list" => :index, "remove" => :destroy }
+
+# # This is a router:
+# if route = routes[command]
+#   controller.send route
+#  end
+
+greeting = "Welcome to Photo Assistant \nWhat would you like to do today?\n\n"
+puts greeting
+
+puts <<EOS
+Currently supported commands are:
+* photoassistant add <equipment>
+* photoassistant add <photo_shoot>
+* photoassistant list <equipment>
+* photoassistant remove <equipment>
+* photoassistant remove <photo_shoot>
+EOS
+
+
+
+
+

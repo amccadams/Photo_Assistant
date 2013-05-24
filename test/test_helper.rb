@@ -5,6 +5,7 @@ connect_to 'test'
 
 ENV['FP_ENV'] = 'test'
 
+
 module DatabaseCleaner
   # def before_setup
   #   super
