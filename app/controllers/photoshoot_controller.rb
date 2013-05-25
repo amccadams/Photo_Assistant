@@ -1,19 +1,19 @@
 class PhotoShootController
   # include Formatter
   
-  def initialize params
-    @params = params  
+  def initialize photoshoot_params
+    @photoshoot_params = photoshoot_params  
   end
 
-def index
+  def index
     photoshoots = PhotoShoot.all
-    photoshoots.each_with_index do |photos, i|
-      puts "#{i+1}. #{photos.name}"
+    photoshoots.each_with_index do |photoshoot, i|
+      puts "#{i+1}. #{photoshoot.name}"
     end
   end
 
   def create
-    photoshoots = PhotoShoot.new(@params[:photo_shoot])
+    photoshoots = PhotoShoot.new(@photoshoot_params[:photoshoot])
     if photoshoots.save
       puts "Success!"
     else
@@ -22,8 +22,8 @@ def index
   end
 
   def destroy
-    matching_equipments = PhotoShoot.where(name: @params[:photo_shoot][:name]).all
-    matching_equipments.each do |photoshoot|
+    matching_photoshoots = PhotoShoot.where(name: @photoshoot_params[:photoshoot][:name]).all
+    matching_photoshoots.each do |photoshoot|
       photoshoot.destroy
     end
   end

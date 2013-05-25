@@ -9,7 +9,41 @@ command = ARGV[0]
 equipment_name = ARGV[1]
 serial_number = ARGV[2]
 # equipment_type_index = ARGV[3]
+equipment_params = { command: command, equipment: { name: equipment_name, serial: serial_number} }
+equipment_controller = EquipmentController.new(equipment_params)
+
+name = ARGV[1]
+address = ARGV[2]
+city = ARGV[3]
+state = ARGV[4]
+zip = ARGV[5]
+phone = ARGV[6]
+email = ARGV[7]
+date = ARGV[8]
+time = ARGV[9]
+photoshoot_params = { command: command, photoshoot: { name: name, address: address, city: city, state: state, zip: zip, phone:phone, email: email, date: date, time:time} }
+photoshoot_controller = PhotoShootController.new(photoshoot_params)
+
+
+
+
+# equipment_type_index = ARGV[3]
 # photo_shoot_name = ARGV[3]
+
+  if command =="addGear"
+    equipment_controller.create
+  elsif command == "listGear"
+    equipment_controller.index
+   elsif command == "removeGear"
+    equipment_controller.destroy
+
+  elsif command == "addShoot"
+    photoshoot_controller.create
+  elsif command == "listShoot"
+    photoshoot_controller.index
+  elsif command =="removeShoot"
+    photoshoot_controller.destroy
+  end
 
 greeting = "Welcome to Photo Assistant \nWhat would you like to do today?\n\n"
 puts greeting
@@ -17,25 +51,29 @@ puts greeting
 
  puts <<EOS
 Currently supported commands are:
-* photoassistant add <equipment>
-* photoassistant list <equipment>
-* photoassistant remove <equipment>
-* photoassistant add p  <photo_shoot>
-* photoassistant list p  <photo_shoot>
-* photoassistant remove p <photo_shoot>
+* photoassistant addGear <equipment>
+* photoassistant listGear <equipment>
+* photoassistant removeGear <equipment>
+* photoassistant addShoot  <photo_shoot>
+* photoassistant listShoot  <photo_shoot>
+* photoassistant removeShoot <photo_shoot>
 EOS
 
-equipment_params = { command: command, equipment: { name: equipment_name, serial: serial_number} }
-controller =  EquipmentController.new(equipment_params)
+
+
+# equipment_params = { command: command, equipment: { name: equipment_name, serial: serial_number} }
+# controller =  EquipmentController.new(equipment_params)
 # params = { command: command, photo_shoot: {name: photo_shoot_name} }
 # controller =  PhotoShootController.new(params)
-routes = { "add" => :create, "list" => :index, "remove" => :destroy }
 
-# This is a router:
-if route = routes[command]
-  controller.send route
 
- end
+# routes = { "add" => :create, "list" => :index, "remove" => :destroy }
+
+# # This is a router:
+# if route = routes[command]
+#   controller.send route
+
+ 
 
 
 
