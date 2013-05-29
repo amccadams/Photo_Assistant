@@ -1,6 +1,8 @@
 
 <h1>Photo Assistant</h1>
 
+
+
 <h2>Purpose</h2>
 
 <p>This is my example project for the Unit 2 (Ruby) Capstone for Nashville Software School Development Fundamentals course.</p>
