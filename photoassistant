@@ -4,6 +4,10 @@ require_relative 'bootstrap_ar'
 database = ENV['PA_ENV'] || 'development'
 connect_to database
 
+greeting = "Welcome to Photo Assistant \nWhat would you like to do today?\n
+To see a list of commands enter <photoassistant listCommands> \n"
+puts greeting
+
 command = ARGV[0]
 
 equipment_name = ARGV[1]
@@ -25,11 +29,6 @@ photoshoot_params = { command: command, photoshoot: { name: name, address: addre
 photoshoot_controller = PhotoShootController.new(photoshoot_params)
 
 
-
-
-# equipment_type_index = ARGV[3]
-# photo_shoot_name = ARGV[3]
-
   if command =="addGear"
     equipment_controller.create
   elsif command == "listGear"
@@ -43,13 +42,11 @@ photoshoot_controller = PhotoShootController.new(photoshoot_params)
     photoshoot_controller.index
   elsif command =="removeShoot"
     photoshoot_controller.destroy
+
   end
 
-greeting = "Welcome to Photo Assistant \nWhat would you like to do today?\n\n"
-puts greeting
 
-
- puts <<EOS
+ supported_commands =  <<EOS
 Currently supported commands are:
 * photoassistant addGear <equipment>
 * photoassistant listGear <equipment>
@@ -60,18 +57,6 @@ Currently supported commands are:
 EOS
 
 
-
-# equipment_params = { command: command, equipment: { name: equipment_name, serial: serial_number} }
-# controller =  EquipmentController.new(equipment_params)
-# params = { command: command, photo_shoot: {name: photo_shoot_name} }
-# controller =  PhotoShootController.new(params)
-
-
-# routes = { "add" => :create, "list" => :index, "remove" => :destroy }
-
-# # This is a router:
-# if route = routes[command]
-#   controller.send route
 
  
 
