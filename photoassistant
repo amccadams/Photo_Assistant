@@ -29,6 +29,7 @@ photoshoot_params = { command: command, photoshoot: { name: name, address: addre
 photoshoot_controller = PhotoShootController.new(photoshoot_params)
 
 
+  
   if command =="addGear"
     equipment_controller.create
   elsif command == "listGear"

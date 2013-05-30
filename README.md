@@ -1,9 +1,7 @@
 
 <h1>Photo Assistant</h1>
-{<img src="https://travis-ci.org/amccadams/Photo_Assistant.png?branch=master" alt="Build Status" />}[https://travis-ci.org/amccadams/Photo_Assistant]
+{<img src="https://travis-ci.org/amccadams/Photo_Assistant.png?branch=master" alt="Build Status" />}
 
-https://travis-ci.org/amccadams/Photo_Assistant/builds/7610599
-Changeset	https://github.com/amccadams/Photo_Assistant/compare/5547d875b69c...26ebcf4a89d6
 <h2>Purpose</h2>
 
 <p>This is my example project for the Unit 2 (Ruby) Capstone for Nashville Software School Development Fundamentals course.</p>
